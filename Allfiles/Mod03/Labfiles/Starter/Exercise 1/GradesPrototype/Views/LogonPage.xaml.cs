@@ -28,7 +28,8 @@ namespace GradesPrototype.Views
         }
 
         #region Event Members
-        // TODO: Exercise 1: Task 2a: Define the LogonSuccess event handler
+        // TODO: Exercise 1: Task 2a: Define the LogonSuccess event handler.
+        
 
         #endregion
 
