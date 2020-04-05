@@ -112,7 +112,11 @@ namespace GradesPrototype.Views
         // TODO: Exercise 4: Task 3c: Enroll a student in the teacher's class
         private void EnrollStudent_Click(object sender, RoutedEventArgs e)
         {
- 
+            AssignStudentDialog asd = new AssignStudentDialog();
+            asd.ShowDialog();
+
+            // Refresh the display to show any newly enrolled students
+            Refresh();
         }
         #endregion
     }
