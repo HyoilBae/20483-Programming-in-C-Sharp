@@ -56,7 +56,25 @@ namespace GradesPrototype.Views
         // Grades data is hardcoded in the XAML code for the StudentProfile view in this version of the prototype
         public void Refresh()
         {
+            Match matchNames = Regex.Match(SessionContext.CurrentStudent, @"([^ ] +)([^ ] +)");
 
+            if (matchNames.Success)
+            {
+                string firstName = matchNames.Groups[1].Value;
+                string lastName = matchNames.Groups[2].Value;
+
+                ((TextBlock)studentName.Children[0]).Text = firstName;
+                ((TextBlock)studentName.Children[1]).Text = lastName;
+            }
+
+            if (SessionContext.UserRole ==Role.Student)
+            {
+                btnBack.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                btnBack.Visibility = Visibility.Visible;
+            }
         }
     }
 }
